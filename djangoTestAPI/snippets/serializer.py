@@ -1,5 +1,5 @@
 import sys
-sys.path.insert('/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/DjangoTestAPI/djangoTestAPI/snippets/models')
+sys.path.insert(0, '/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/DjangoTestAPI/djangoTestAPI/snippets/models')
 from models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES
 from rest_framework import serializers
 
