@@ -1,19 +1,17 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 
-import sys
-sys.path.insert(0, '/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/DjangoTestAPI/djangoTestAPI/snippets/models')
-from models import Snippet
+from snippets.models import Snippet
 
-sys.path.insert(0, '/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/DjangoTestAPI/djangoTestAPI/snippets/serializer')
-from serializer import SnippetSerializer
+from snippets.serializer import SnippetSerializer
 
-from __future__ import unicode_literals
 
-from django.shortcuts import render
+
+# from django.shortcuts import render
 
 
 @csrf_exempt

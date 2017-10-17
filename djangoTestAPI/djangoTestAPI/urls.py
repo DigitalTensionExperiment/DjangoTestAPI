@@ -13,10 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+
+
 from django.conf.urls import url, include
 from django.contrib import admin
 
 from snippets import views
+
+# def url(*args):
+#     pass
+#def include(*args):
+#    pass
 
 urlpatterns = [
 
@@ -24,7 +31,7 @@ urlpatterns = [
     url(r'^snippets/$', views.snippet_list),
     url(r'^snippets/(?P<pk>[0-9]+)/$', views.snippet_detail),
 
-    url(r'^', include('snippets.urls')),
+    # url(r'^', include('snippets.urls')),
 
 ]
 

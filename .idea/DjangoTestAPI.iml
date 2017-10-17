@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/djangoTestAPI" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/djangoTestAPI/snippets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/djangoTestAPI/djangoTestAPI" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 2.7.10 virtualenv at ~/Documents/gitcode/DjangoTestAPI/apitest" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
