@@ -15,14 +15,15 @@ Including another URLconf
 """
 
 
-from django.conf.urls import url, include
+from django.conf.urls import url #, include
 from django.contrib import admin
 
 from snippets import views
 
 # def url(*args):
 #     pass
-#def include(*args):
+
+# def include(*args):
 #    pass
 
 urlpatterns = [
