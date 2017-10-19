@@ -46,7 +46,6 @@ OrderedDict([(u'title', u''), (u'code', u'print "hello, world"'), (u'linenos', F
 
 
 
-
 [0]:
 
 (apitest) ~:djangoTestAPI admin$ python manage.py runserver
@@ -54,83 +53,27 @@ Performing system checks...
 
 Unhandled exception in thread started by <function wrapper at 0x101de9d70>
 Traceback (most recent call last):
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/utils/autoreload.py", line 228, in wrapper
-    fn(*args, **kwargs)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
-    self.check(display_num_errors=True)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
-    include_deployment_checks=include_deployment_checks,
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
-    return checks.run_checks(**kwargs)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
-    new_errors = check(app_configs=app_configs)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
-    return check_resolver(resolver)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
-    return check_method()
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
-    for pattern in self.url_patterns:
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/DjangoTestAPI/djangoTestAPI/djangoTestAPI/urls.py", line 19, in <module>
-    from snippets import views
+(...)
   File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/DjangoTestAPI/djangoTestAPI/snippets/views.py", line 14
     from __future__ import unicode_literals
 SyntaxError: from __future__ imports must occur at the beginning of the file
 
+FIX: Put the 'from __future__ import'; 
 
 
 
 [1]:
 
-
 Performing system checks...
 
 Unhandled exception in thread started by <function wrapper at 0x1014b8d70>
 Traceback (most recent call last):
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/utils/autoreload.py", line 228, in wrapper
-    fn(*args, **kwargs)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
-    self.check(display_num_errors=True)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
-    include_deployment_checks=include_deployment_checks,
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
-    return checks.run_checks(**kwargs)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
-    new_errors = check(app_configs=app_configs)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
-    return check_resolver(resolver)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
-    return check_method()
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
-    for pattern in self.url_patterns:
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/DjangoTestAPI/djangoTestAPI/djangoTestAPI/urls.py", line 27, in <module>
-    url(r'^', include('snippets.urls')),
-  File "/Users/zwilhelm/Documents/gitcode/DjangoTestAPI/apitest/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
-    urlconf_module = import_module(urlconf_module)
+(...)
   File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
     __import__(name)
 ImportError: No module named urls
 
-
+FIX: Commented out snippets.urls from urls patters;
 
 
 
