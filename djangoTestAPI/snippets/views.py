@@ -2,19 +2,16 @@
 from __future__ import unicode_literals
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-
+from rest_framework import status
+from rest_framework.response import Response
 from snippets.models import Snippet
-
 from snippets.serializer import SnippetSerializer
+from rest_framework.decorators import api_view
 
 
 
-# from django.shortcuts import render
-
-
-@csrf_exempt
+@api_view(['GET', 'POST'])
 def snippet_list(request):
     """
     List all code snippets, or create a new snippet.
@@ -22,15 +19,18 @@ def snippet_list(request):
     if request.method == 'GET':
         snippets = Snippet.objects.all()
         serializer = SnippetSerializer(snippets, many=True)
-        return JsonResponse(serializer.data, safe=False)
+        # return JsonResponse(serializer.data, safe=False)
+        return Response(serializer.data)
 
     elif request.method == 'POST':
-        data = JSONParser().parse(request)
-        serializer = SnippetSerializer(data=data)
+        # data = JSONParser().parse(request)
+        serializer = SnippetSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
+            # return JsonResponse(serializer.data, status=201)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        # return JsonResponse(serializer.errors, status=400)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @csrf_exempt

@@ -58,7 +58,7 @@ Traceback (most recent call last):
     from __future__ import unicode_literals
 SyntaxError: from __future__ imports must occur at the beginning of the file
 
-FIX: Put the 'from __future__ import'; 
+FIX: Put the 'from __future__ import';
 
 
 
